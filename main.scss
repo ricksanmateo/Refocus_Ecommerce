@@ -1,0 +1,438 @@
+@use 'scss/variables';
+@use 'scss/mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;500;900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  height: 84px;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  position: fixed;
+  background: variables.$bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 100px;
+}
+
+#menu-icon {
+  @include mixins.text-style($font-size: 20px, $font-weight: 500, $color: variables.$secondary-color);
+  // font-size: 20px;
+  // font-weight: 500;
+  // color: variables.$secondary-color;
+  z-index: 10001;
+  border: 3px solid variables.$secondary-color;
+  padding: 5px;
+  border-radius: 50%;
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li a {
+  @include mixins.text-style($font-size: 18px, $font-weight: 500, $color:variables.$text-color);
+  // font-size: 18px;
+  // font-weight: 500;
+  // color: variables.$text-color;
+  line-height: 22px;
+  padding: 10px 15px;
+  margin: 0 10px;
+  border-radius: 20px;
+  transition: all 0.40s ease;
+  text-transform: capitalize;
+}
+
+.navbar li a:hover {
+  color: variables.$light-color;
+  text-decoration: underline;
+}
+
+.navbar li.signup-btn {
+  margin-left: 60px;
+}
+
+.navbar li.btn a{
+  @include mixins.text-style($font-size: 16px, $font-weight: 700, $color:variables.$text-color);
+  // font-weight: 700;
+  // font-size: 16px;
+  // color: variables.$text-color;
+  line-height: 16px;
+  opacity: 0.6;
+  border: 1px solid variables.$dark-grey;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.navbar li.btn a:hover {
+  color: variables.$secondary-color;
+  border: 1px solid variables.$secondary-color;
+  opacity: 1.0;
+}
+
+.navbar li.btn a:active {
+  color: variables.$text-color;
+  background-color: variables.$secondary-color;
+} 
+
+/* section start */
+section {
+  padding: 100px 8%;
+}
+
+.container {
+  margin: 60px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, auto));
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 95px;
+}
+
+.card {
+  width: 320px;
+  /* height: 250px; */
+  overflow: hidden;
+  background: variables.$text-color;
+  border-radius: 5px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.x-icon i {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 120px;
+  font-size: 22px;
+  color: variables.$dark-grey;
+  cursor: pointer;
+}
+
+.x-icon i:hover {
+  color: variables.$text-color;
+  opacity: 1;
+}
+
+.card-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-content {
+  width: 280px;
+  margin: 10px 20px;
+  align-items: flex-start;
+}
+
+.bx-check-circle {
+  display: flex;
+  justify-content: flex-start;
+  color: variables.$light-grey;
+  margin-bottom: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.bx-check-circle.active {
+  color: variables.$secondary-color;
+}
+
+.card-content i:hover {
+  color: variables.$bg-color;
+}
+
+.card-content h3 {
+  @include mixins.text-style($font-size: 18px, $font-weight: 600, $color: variables.$dark-color);
+  // font-size: 18px;
+  // font-weight: 600;
+  // color: variables.$dark-color;
+}
+
+.card-content p {
+  @include mixins.text-style($font-size: 18px, $font-weight: 500, $color: variables.$dark-color);
+  // font-size: 18px;
+  // font-weight: 500;
+  // color: variables.$dark-color;
+  margin-bottom: 10px;
+}
+
+.card-content hr {
+  border-top: 1px solid variables.$dark-grey;
+  margin: 10px 0;
+}
+
+
+.hug {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  @include mixins.text-style($font-size: 14px, $font-weight: normal, $color: variables.$light-grey);
+  // font-size: 14px;
+  // font-weight: normal;
+  // color: variables.$light-grey;
+  border: 1px solid variables.$dark-grey;
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.heart {
+  width: 60px;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.heart:hover {
+  color: variables.$bg-color;
+}
+
+.bxs-heart {
+  @include mixins.text-style($font-size: 20px, $font-weight: normal, $color: variables.$light-grey);
+  // font-size: 20px;
+  // font-weight: normal;
+  // color: variables.$light-grey;
+}
+
+.bxs-heart.active {
+  color: variables.$secondary-color;
+}
+
+.heart p {
+  @include mixins.text-style($font-size: 14px, $font-weight: normal, $color: variables.$dark-grey);
+  // font-size: 14px;
+  // font-weight: normal;
+  // color: variables.$dark-grey;
+  padding-top: 7px;
+}
+
+/* footer start */
+footer {
+  width: 100%;
+  height: auto;
+  background: variables.$dark-color;
+}
+
+.col-left .col-right{
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container {
+  padding: 60px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col small{
+  @include mixins.text-style($font-size: 12px, $font-weight: 400, $color: variables.$text-color);
+  // font-size: 12px;
+  // font-weight: 400;
+  // color: variables.$text-color;
+  opacity: 0.5;
+}
+
+.footer-col ul {
+  display: flex;
+}
+
+.col {
+  padding-bottom: 40px;
+}
+
+.footer-col .follow-us {
+  @include mixins.text-style($font-size: 12px, $font-weight: 400, $color: variables.$text-color);
+  // font-size: 12px;
+  // font-weight: 400;
+  // color: variables.$text-color;
+  line-height: 15.6px;
+}
+
+.footer-col .title {
+  @include mixins.text-style($font-size: 16px, $font-weight: 700, $color: variables.$text-color);
+  // font-size: 16px;
+  // font-weight: 700;
+  // color: variables.$text-color;
+  line-height: 20.8px;
+}
+
+.footer-col .list li {
+  padding: 10px 15px;
+}
+
+.footer-col .follow-us-title {
+  @include mixins.text-style($font-size: 12px, $font-weight: 400, $color: variables.$text-color);
+  // font-size: 12px;
+  // font-weight: 400;
+  // color: variables.$text-color;
+  line-height: 15.6px;
+}
+
+.footer-col .follow-us-list li{
+  padding: 5px 10px;
+}
+
+.footer-col .list li a{
+  @include mixins.text-style($font-size: 12px, $font-weight: 400, $color: variables.$text-color);
+  // font-size: 12px;
+  // font-weight: 400;
+  // color: variables.$text-color;
+  line-height: 15.6px;
+}
+
+.footer-col .list li a:hover {
+  color: variables.$secondary-color;
+}
+
+.footer-col li a i{
+  font-size: 25px;
+  color: variables.$text-color;
+  background: variables.$bg-color;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.footer-col li a i:hover {
+  background: variables.$text-color;
+  color: variables.$bg-color;
+}
+
+
+
+@media(max-width: 768px) {
+  header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+  }
+
+  .navbar {
+    top: -250px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    flex-direction: column;
+    background: variables.$bg-color;
+    transition: all 0.4s ease;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+
+  .navbar a {
+    display: block;
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  .navbar.active {
+    top: 100%;
+  }
+
+  .navbar li.signup-btn {
+    margin-left: 0;
+  }
+
+  .navbar li.btn a{
+    @include mixins.text-style($font-size: 16px, $font-weight: 700, $color: variables.$text-color);
+    // font-weight: 700;
+    // font-size: 16px;
+    // color: variables.$text-color;
+    line-height: 15px;
+    opacity: 0.6;
+    border: none;
+  }
+  section {
+    padding: 10px 2%;
+    width: 100%;
+    height: auto;
+  }
+
+  .container {
+    margin: 40px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } 
+  #menu-icon {
+    display: block;
+  }
+  .card {
+    width: 290px;
+  }
+  .card-content hr {
+    margin: 5px 0;
+    width: 250px;
+  }
+
+  .x-icon i {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 105px;
+    font-size: 22px;
+    color: variables.$dark-grey;
+    cursor: pointer;
+  }
+
+  .heart {
+    margin: 0 20px;
+  }
+
+  /* footer */
+  .footer-container {
+    padding: 40px 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  footer {
+    width: 100%;
+    height: auto;
+    background: variables.$dark-color;
+  }
+
+  .footer-col {
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}
